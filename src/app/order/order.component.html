@@ -1,0 +1,13 @@
+<div class="form-group row">
+  <label for="orderlabel" class="col-sm-2 col-form-label">Order</label>
+  <div class="col-sm-6">
+    <!-- <input type="text" class="form-control" id="orderlabel" 
+    value="{{ orderName }}"
+    (input)="changeOrder($event)"> -->
+    <input type="text" class="form-control" id="orderlabel" [(ngModel)]="orderName">
+  </div>
+</div>
+<!-- <button type="button" class="btn btn-primary" disabled:false>Primary</button> -->
+<button type="button" class="btn btn-primary" [disabled]="!allowOrders"
+(click)="onChangOrder()">Primary</button>
+<p>This order is for {{ orderName }}. Quantity ordered is {{ orderQty }}
